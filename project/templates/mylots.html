@@ -1,0 +1,32 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+<title>Мои лоты</title>
+{% endblock %}
+
+{% block body %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Ваши лоты</h1>
+  <p class="lead">Здесь вы можете управлять своими лотами</p>
+</div>
+
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+  {% for el in data %}
+  <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">{{ el.title }}</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{ el.price }} <small class="text-muted">рублей</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Картинка</li>
+        </ul>
+        <a href="/changemylot/{{ el.id }}" class="btn btn-lg btn-block btn-outline-primary">Редактировать</a>
+        <a href="/delete/{{ el.id }}" class="btn btn-lg btn-block btn-outline-primary">Удалить</a>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock %}
+</div>

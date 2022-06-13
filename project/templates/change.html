@@ -1,0 +1,15 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+Редактирование лота
+{% endblock %}
+
+{% block body %}
+<h1 class="container">Редактирование лота</h1>
+<form method="post">
+    <input type="text" class="container form-control" name="title" id="title" value="{{ item.title }}" placeholder="Введите название"><br>
+    <input type="text" class="container form-control" name="price" id="price" value="{{ item.price }}" placeholder="Введите цену"><br>
+    <input type="datetime-local" class="container form-control" name="time" id="time"><br>
+    <button class="btn btn-success" type="submit">Редактировать</button>
+</form>
+{% endblock %}
